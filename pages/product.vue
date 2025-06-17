@@ -15,7 +15,7 @@
 
     <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <li
-        v-for="p in data"
+        v-for="p in filteredProducts"
         :key="p.id"
         class="p-4 border rounded-lg hover:shadow-lg transition"
       >
@@ -41,18 +41,13 @@ const { data,pending ,error } = await useFetch('https://localhost:44316/Hitop/Ge
 );
 
 const searchQuery = ref('')
-
-const products = ref([
-  { id: 1, name: 'Apple iPhone 13', price: 999 },
-  { id: 2, name: 'Samsung Galaxy S21', price: 899 },
-  { id: 3, name: 'Google Pixel 6', price: 799 },
-  { id: 4, name: 'OnePlus 9 Pro', price: 969 },
-])
-
+watch(searchQuery, (newQuery) => {
+  console.log(newQuery);
+})
 
 const filteredProducts = computed(() => {
-  if (!searchQuery.value) return products.value
-  return products.value.filter(product =>
+  if (!searchQuery.value) return data.value
+  return data.value.filter(product =>
     product.name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 })
