@@ -8,7 +8,7 @@
 
 
 <script setup>
-const { data, error } = await useFetch('https://localhost:44316/Hitop/Getproduct'
+const { data,pending ,error } = await useFetch('https://localhost:44316/Hitop/Getproduct'
 ,{
   server: false, 
   watch: [], }
