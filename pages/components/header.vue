@@ -25,7 +25,7 @@
     <!-- Mobile Menu -->
     <div v-if="mobileOpen" class="md:hidden bg-white border-t border-gray-200 px-4 py-4">
       <NuxtLink to="/" class="block py-2 text-gray-700 hover:text-indigo-600" @click="closeMenu">Home</NuxtLink>
-      <NuxtLink to="/products" class="block py-2 text-gray-700 hover:text-indigo-600" @click="closeMenu">Products</NuxtLink>
+      <NuxtLink to="/product" class="block py-2 text-gray-700 hover:text-indigo-600" @click="closeMenu">Products</NuxtLink>
     </div>
   </header>
 </template>
